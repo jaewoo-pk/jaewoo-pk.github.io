@@ -20,7 +20,6 @@ export type Project = {
 }
 
 // Edit this object to update the projects page. Projects appear in array order.
-// Replace the example entries with your work; optional fields can be removed.
 export const projectsPage: {
   title?: string
   description?: string
@@ -28,34 +27,20 @@ export const projectsPage: {
 } = {
   projects: [
     {
-      id: 'example-project',
-      title: 'Example project',
+      id: 'moshi-silence',
+      title: 'Teaching Moshi when to stay silent',
       description:
-        'Describe what you worked on, the problem it solves, and your contribution. Include what you learned or the impact of the finished work.',
-      date: '2025 – Present',
+        'How much synthetic fine-tuning data does it take to teach a full-duplex speech model (Kyutai\'s Moshi) to stay quiet on instruction and speak again at the right moment? "Give me ten seconds, then ask me again", "stay quiet until I\'m back", "let me describe all three options first". I built a synthetic-conversation generator, LoRA fine-tuned moshiko-7B on 1 h to 50 h of data, and measured hold/resume behavior on held-out scripts, wording, voices, distractors and my own recorded voice. The demo plays the same unseen conversations to the base model and the 45 h fine-tune.',
+      date: 'October 2025',
       details: [
-        { label: 'Role', value: 'Designer & developer' },
-        { label: 'Status', value: 'In progress' },
+        { label: 'Model', value: 'kyutai/moshiko-pytorch-bf16 + LoRA r=64 (moshi-finetune)' },
+        { label: 'Result', value: 'Behavior score 0.32 → 0.86 on fully held-out conversations; 0.33 → 0.83 on my own voice' },
       ],
-      tags: ['Electronics'],
-      // Put your images in public/projects/ and add entries like this:
-      photos: [
-        {
-          filename: 'example-project/electronics.jpg',
-          alt: 'Describe what the photo shows',
-          width: 1600,
-          height: 1000,
-          caption: 'An optional caption or photo credit.',
-        },
+      tags: ['Speech', 'Fine-tuning', 'Synthetic data', 'PyTorch'],
+      links: [
+        { label: 'Interactive demo (listen)', href: '/moshi-demo/' },
+        { label: 'Code and report (GitHub)', href: 'https://github.com/jaewoo-pk/moshi-silence' },
       ],
-      links: [{ label: 'Project website', href: 'https://example.com' }],
-    },
-    {
-      id: 'another-example',
-      title: 'Another example project',
-      description:
-        'A project can be as simple as a title and description. Add photos, links, dates, or other details when they help tell the story.',
-      date: 'June 2024',
     },
   ],
 }
