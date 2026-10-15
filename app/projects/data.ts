@@ -31,7 +31,7 @@ export const projectsPage: {
       title: 'Teaching Moshi when to stay silent',
       description:
         'How much synthetic fine-tuning data does it take to teach a full-duplex speech model (Kyutai\'s Moshi) to stay quiet on instruction and speak again at the right moment? "Give me ten seconds, then ask me again", "stay quiet until I\'m back", "let me describe all three options first". I built a synthetic-conversation generator, LoRA fine-tuned moshiko-7B on 1 h to 50 h of data, and measured hold/resume behavior on held-out scripts, wording, voices, distractors and my own recorded voice. The demo plays the same unseen conversations to the base model and the 45 h fine-tune.',
-      date: 'October 2025',
+      date: 'October 2026',
       details: [
         { label: 'Model', value: 'kyutai/moshiko-pytorch-bf16 + LoRA r=64 (moshi-finetune)' },
         { label: 'Result', value: 'Behavior score 0.32 → 0.86 on fully held-out conversations; 0.33 → 0.83 on my own voice' },
